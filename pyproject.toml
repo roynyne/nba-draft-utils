@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "grp_krml_group6"
+version = "0.0.1"
+description = "A package for doing ML project"
+authors = ["Rusan"]
+license = "GNU General Public License v3.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "2.2.2"
+scikit-learn = "1.5.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.2.2"
+jupyterlab = "4.2.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
