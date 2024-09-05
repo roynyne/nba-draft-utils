@@ -344,7 +344,23 @@ def relationship_plot(df, x, y, kind="scatterplot", hue=None):
     else:
         raise ValueError(f"Invalid 'kind' parameter. Supported types are 'scatterplot', 'lineplot', 'jointplot'.")
 
-def plot_confusion_matrix(y_true, y_pred, cmap="Blues"):
+
+def roc_curve_plot(y, y_preds):
+    import matplotlib.pyplot as plt
+    from sklearn.metrics import roc_curve, roc_auc_score
+
+    roc_auc = roc_auc_score(y, y_preds)
+
+    fpr, tpr, thresholds = roc_curve(y, y_preds)
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, color='blue', label=f'ROC Curve (area = {roc_auc:.4f})')
+    plt.plot([0, 1], [0, 1], color='red', linestyle='--')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic (ROC) Curve')
+    plt.legend(loc="lower right")
+
+def confusion_matrix_plot(y_true, y_pred, cmap="Blues"):
     """
     Function to plot confusion matrix using Seaborn and Matplotlib.
     
@@ -372,18 +388,3 @@ def plot_confusion_matrix(y_true, y_pred, cmap="Blues"):
     plt.xlabel('Predicted Labels')
     plt.ylabel('True Labels')
     plt.title('Confusion Matrix')
-
-def roc_curve_plot(y, y_preds):
-    import matplotlib.pyplot as plt
-    from sklearn.metrics import roc_curve, roc_auc_score
-
-    roc_auc = roc_auc_score(y, y_preds)
-
-    fpr, tpr, thresholds = roc_curve(y, y_preds)
-    plt.figure(figsize=(8, 6))
-    plt.plot(fpr, tpr, color='blue', label=f'ROC Curve (area = {roc_auc:.4f})')
-    plt.plot([0, 1], [0, 1], color='red', linestyle='--')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic (ROC) Curve')
-    plt.legend(loc="lower right")

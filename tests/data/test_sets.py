@@ -4,7 +4,6 @@ import pandas as pd
 
 from grp_krml_group6.data.sets import pop_target
 
-
 @pytest.fixture
 def features_fixture():
     features_data = [
