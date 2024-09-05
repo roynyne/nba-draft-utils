@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "grp_krml_group6"
-version = "0.0.1"
+version = "2024.0.0.2"
 description = "A package for doing ML project"
 authors = ["Rusan"]
 license = "GNU General Public License v3.0"

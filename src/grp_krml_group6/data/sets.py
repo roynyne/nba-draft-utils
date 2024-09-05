@@ -344,7 +344,7 @@ def relationship_plot(df, x, y, kind="scatterplot", hue=None):
     else:
         raise ValueError(f"Invalid 'kind' parameter. Supported types are 'scatterplot', 'lineplot', 'jointplot'.")
 
-def plot_confusion_matrix(y_true, y_pred, labels=None, normalize=False, cmap="Blues"):
+def plot_confusion_matrix(y_true, y_pred, normalize=False, cmap="Blues"):
     """
     Function to plot confusion matrix using Seaborn and Matplotlib.
     
@@ -354,8 +354,6 @@ def plot_confusion_matrix(y_true, y_pred, labels=None, normalize=False, cmap="Bl
         True labels.
     y_pred : array-like of shape (n_samples,)
         Predicted labels.
-    labels : list, optional
-        List of labels to index the matrix. This may be used to reorder or select a subset of labels.
     normalize : bool, optional
         If True, normalize the confusion matrix by dividing by the sum of each row.
     cmap : str, optional
@@ -368,11 +366,11 @@ def plot_confusion_matrix(y_true, y_pred, labels=None, normalize=False, cmap="Bl
     from sklearn.metrics import confusion_matrix
 
     # Compute the confusion matrix
-    cm = confusion_matrix(y_true, y_pred, labels=labels, normalize='true' if normalize else None)
+    cm = confusion_matrix(y_true, y_pred, normalize='true' if normalize else None)
     
     # Create a heatmap
     plt.figure(figsize=(8, 6))
-    sns.heatmap(cm, annot=True, fmt=".2f" if normalize else "d", cmap=cmap, xticklabels=labels, yticklabels=labels)
+    sns.heatmap(cm, annot=True, fmt=".2f" if normalize else "d", cmap=cmap)
     plt.xlabel('Predicted Labels')
     plt.ylabel('True Labels')
     plt.title('Confusion Matrix')
