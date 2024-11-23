@@ -5,7 +5,7 @@ A package for doing ML project
 ## Installation
 
 ```bash
-$ pip install grp_krml_group6
+$ pip install nba-draft-utils
 ```
 
 ## Usage
@@ -18,8 +18,8 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`grp_krml_group6` was created by Rusan. It is licensed under the terms of the GNU General Public License v3.0 license.
+`nba-draft-utils` was created by Roy & Rusan. It is licensed under the terms of the GNU General Public License v3.0 license.
 
 ## Credits
 
-`grp_krml_group6` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`nba-draft-utils` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
