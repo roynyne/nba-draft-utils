@@ -1,4 +1,4 @@
-# grp_krml_group6
+# nba-draft-utils
 
 A package for doing ML project
 
